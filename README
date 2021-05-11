@@ -1,0 +1,16 @@
+## Run
+
+```bash
+chmod +x setup.sh && sudo ./setup.sh
+```
+
+to run script
+
+## Note
+
+Tested with: 
+    OS: e.g. Linux Mint
+    Versio: e.g. 20.1
+    Codename: e.g. Ulyssa
+    DE: e.g. Cinnamon
+    Date: e.g. 4 May 2021

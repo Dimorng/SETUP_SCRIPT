@@ -1,9 +1,9 @@
 ## Run
 
-1. clone or move script to your home directory of current user:
+1. clone (this repo) or move script directory (SETUP_SCRIPT/) to your home directory of current user:
 
 ```
-git clone `repo` ~/SETUP_SCRIPT/
+git clone https://github.com/Dimorng/SETUP_SCRIPT.git ~/SETUP_SCRIPT/
 ```
 2. run script
 
@@ -20,7 +20,7 @@ Alias command created:
 
 Tested with: 
 - OS: e.g. Linux Mint
-- Versio: e.g. 20.1
+- Version: e.g. 20.1
 - Codename: e.g. Ulyssa
 - DE: e.g. Cinnamon
 - Date: e.g. 4 May 2021

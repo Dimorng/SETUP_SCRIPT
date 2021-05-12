@@ -1,0 +1,2 @@
+#update LibreOffice -u dimorng /home/dimorng/Desktop/test
+alias ULO='cd ~/SETUP_SCRIPT/ && sudo ./updateLibreOffice.sh' -u dimorng /home/dimorng/Desktop/test

@@ -129,6 +129,15 @@ chmod +x $home/Others/Apps/close-all-windows.sh
     # Download additional icons
     sudo -u $user git clone git@github.com:Dimorng/customIcons.git $home/Others/customIcons/
 
+    # create alias (command) for updating LibreOffice to the lastest version
+    chmod +x $home/SETUP_SCRIPT/updateLibreOffice.sh
+    echo '#update LibreOffice' >> $home/.bash_aliases
+    echo "alias ULO='cd ~/SETUP_SCRIPT/ && sudo ./updateLibreOffice.sh'" >> $home/.bash_aliases
+
+    # reate alias (command) for clean up system
+    echo '#clean up system' >> $home/.bash_aliases
+    echo "alias clean='sudo apt clean && sudo apt autoclean && sudo apt autoremove'" >> $home/.bash_aliases
+    
 # Clean up system and reboot
 sudo -u $user mv $home/TMP/*.deb $home/DEB/
 rm -rf $home/TMP

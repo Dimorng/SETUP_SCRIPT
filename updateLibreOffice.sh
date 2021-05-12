@@ -18,10 +18,11 @@ apt-get autoremove
 # Dowload Latest version of LibreOffice for office website
     # get Download Link
     L=$(python3 LO_lastest_V_link.py)
-    # Download LibreOffcie .deb files
+    # Download lastest version of LibreOffcie .deb files
     sudo -u $user mkdir $home/Desktop/LibreOfficeSOFT/ $home/Desktop/TMP/
     sudo -u $user wget $L -P $home/Desktop/LibreOfficeSOFT/
     sudo -u $user tar -xf $home/Desktop/LibreOfficeSOFT/*.tar.gz -C $home/Desktop/TMP/
+    # install lastest vesion of LibreOffice
     dpkg -i $home/Desktop/TMP/LibreOffice*/DEBS/*.deb
     # clean up & reboot
     rm -r $home/Desktop/TMP/

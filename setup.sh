@@ -105,6 +105,7 @@ chmod +x $home/Others/Apps/close-all-windows.sh
             sudo -u $user mkdir $home/DEB/LibreOffice/
             sudo -u $user wget $L -P $home/DEB/LibreOffice/
             sudo -u $user tar -xf $home/DEB/LibreOffice/*.tar.gz -C $home/TMP/
+            # install LibreOffice
             dpkg -i $home/TMP/LibreOffice*/DEBS/*.deb
             # Download extension
             sudo -u $user mkdir $home/Desktop/LOextension $home/DEB/LibreOffice/extension/
@@ -137,7 +138,7 @@ chmod +x $home/Others/Apps/close-all-windows.sh
     # reate alias (command) for clean up system
     echo '#clean up system' >> $home/.bash_aliases
     echo "alias clean='sudo apt clean && sudo apt autoclean && sudo apt autoremove'" >> $home/.bash_aliases
-    
+
 # Clean up system and reboot
 sudo -u $user mv $home/TMP/*.deb $home/DEB/
 rm -rf $home/TMP

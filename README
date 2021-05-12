@@ -1,10 +1,16 @@
 ## Run
 
+1. clone or move script to your home directory of current user:
+
+```
+git clone `repo` ~/SETUP_SCRIPT/
+```
+2. run script
+
 ```bash
+cd ~/SETUP_SCRIPT/
 chmod +x setup.sh && sudo ./setup.sh
 ```
-
-to run script
 
 ## Note
 

@@ -1,12 +1,30 @@
 #!/bin/sh
 
+# header start ===
 # define $home as the home directory of currently look in user:
     # find username of current account
-    sudo pwd > /home/tmp.link
+    pwd > /home/tmp.link
     user=$(python3 whoRu.py)
-    sudo rm /home/tmp.link
+    rm /home/tmp.link
     # path of home dir of current user
     home='/home/'$user
 
-    echo '#update LibreOffice' >> $home/.bash_aliases
-    echo "alias clean='sudo apt clean && sudo apt autoclean && sudo apt autoremove'" >> $home/.bash_aliases
+# Directory 
+    # Dir to stort file & App
+    #sudo -u $user mkdir $home/Others/ $home/Others/Apps/
+    # Temporary Dir that store downloaded file
+    #sudo -u $user mkdir $home/DEB $home/Soft $home/TMP
+# header end =====
+
+# test code start here ===
+
+# test code end here ===
+
+# foot start =====
+# Clean up system and reboot
+#sudo -u $user mv $home/TMP/*.deb $home/DEB/
+#rm -rf $home/TMP
+#sudo -u $user mkdir $home/Documents/SOFT/
+#sudo -u $user mv $home/DEB $home/Soft $home/Documents/SOFT/
+#apt clean && apt autoclean && apt autoremove #&& reboot
+#footer end =====

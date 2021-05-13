@@ -18,7 +18,7 @@
     # Manually add ssh key to GitHub
     cp $home/.ssh/id_rsa.pub $home/Desktop/ssh_key_must_add_to_github
 
-# Dirextory 
+# Directory 
     # Dir to stort file & App
     sudo -u $user mkdir $home/Others/ $home/Others/Apps/
     # Temporary Dir that store downloaded file
@@ -29,10 +29,9 @@ apt update && apt upgrade -y
 
 # Download and install Bitwaden
     # Download Bitwaden
-    sudo -u $user wget -P $home/DEB 'https://vault.bitwarden.com/download/?app=desktop&platform=linux&variant=deb'
+    sudo -u $user wget -O $home/TMP/Bitwarden.deb 'https://vault.bitwarden.com/download/?app=desktop&platform=linux&variant=deb'
     # Install Bitwaden
-    dpkg -i $home/DEB/*.deb
-    sudo -u $user mv $home/DEB/*.deb $home/TMP/
+    dpkg -i $home/TMP/*.deb
 
 # Prolone laptop battery
 apt install -y tlp tlp-rdw && tlp start
@@ -88,9 +87,9 @@ chmod +x $home/Others/Apps/close-all-windows.sh
     
     # Install Telegram
         # Download telegram
-        sudo -u $user wget -P $home/Soft 'https://telegram.org/dl/desktop/linux'
+        sudo -u $user wget -O $home/Soft/telegram.tar.xz 'https://telegram.org/dl/desktop/linux'
         # Install telegram
-        sudo -u $user tar -xf $home/Soft/*.tar.xz -C /home/dimorng/Others/Apps/
+        sudo -u $user tar -xf $home/Soft/*.tar.xz -C $home/Others/Apps/
 
     # Install Latest version of LibreOffice
         # Uninstall LibreOffcie installed by default
@@ -130,19 +129,34 @@ chmod +x $home/Others/Apps/close-all-windows.sh
     # Download additional icons
     sudo -u $user git clone git@github.com:Dimorng/customIcons.git $home/Others/customIcons/
 
-    # create alias (command) for updating LibreOffice to the lastest version
-    chmod +x $home/SETUP_SCRIPT/updateLibreOffice.sh
-    echo '#update LibreOffice' >> $home/.bash_aliases
-    echo "alias ULO='cd ~/SETUP_SCRIPT/ && sudo ./updateLibreOffice.sh'" >> $home/.bash_aliases
-
-    # reate alias (command) for clean up system
+    # create alias (command) for clean up system
     echo '#clean up system' >> $home/.bash_aliases
     echo "alias clean='sudo apt clean && sudo apt autoclean && sudo apt autoremove'" >> $home/.bash_aliases
+
+    # Configure to use ~/.bash_functions file
+    echo '# Read process shell functions' >> $home/.bashrc
+    echo 'if [ -f ~/.bash_functions ]; then' >> $home/.bashrc
+    echo '    . ~/.bash_functions' >> $home/.bashrc
+    echo 'fi' >> $home/.bashrc
+        # create shell function (command) to check or update LibreOffice to the lastest version available from office website
+        sudo -u $user touch $home/.bash_functions
+        echo '# Check or Update LibreOffice to the lastest version (.deb download from official LibreOffice Website)' >> $home/.bash_functions
+        echo 'function cLO() {' >> $home/.bash_functions
+        echo '   optn=$1' >> $home/.bash_functions
+        echo "   if [[ \$optn == '-U' ]]" >> $home/.bash_functions
+        echo "   then" >> $home/.bash_functions
+        echo '      cd ~/SETUP_SCRIPT/ && sudo ./updateLibreOffice.sh && cd -' >> $home/.bash_functions
+        echo '   else' >> $home/.bash_functions
+        echo '      python3 ~/SETUP_SCRIPT/checkLO.py' >> $home/.bash_functions
+        echo '   fi' >> $home/.bash_functions
+        echo '}' >> $home/.bash_functions
+        # give executable permission to script that use to update LibreOffice
+        chmod +x $home/SETUP_SCRIPT/updateLibreOffice.sh
 
 # Clean up system and reboot
 sudo -u $user mv $home/TMP/*.deb $home/DEB/
 rm -rf $home/TMP
 sudo -u $user mkdir $home/Documents/SOFT/
-sudo -u $user mv $home/DEB $home/Soft $home/Documents/SOFT/
+sudo -u $user mv $home/DEB $home/Soft $home/Documents/Original-Khmer-Keyboard-Layout $home/Documents/SOFT/
 apt clean && apt autoclean && apt autoremove && reboot
 

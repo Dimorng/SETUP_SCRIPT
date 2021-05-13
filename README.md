@@ -16,6 +16,8 @@ chmod +x setup.sh && sudo ./setup.sh
 
 Alias command created:
 - `clean` for system clean up, equivalant to `sudo apt clean && sudo apt autoclean && sudo apt autoremove`
+- `pbcopy path/to/file` for copy content of file to clipboard
+- `pbpaste path/to/file` for paste content from clipboard
 
 command (shell function) created:
 - `cLO` check lastest version of LibreOffice (.deb) available to download on official LibreOffice website

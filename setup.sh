@@ -50,7 +50,7 @@ chmod +x $home/Others/Apps/close-all-windows.sh
 
 # Install Additional app
     # Download extra app from official repo
-    apt update && apt install -y audacity gimp picard scrcpy vlc pdfarranger ffmpeg fonts-khmeros fonts-khmeros-core geogebra texlive dvipng texlive-latex-extra rhythmbox-plugin-alternative-toolbar git aircrack-ng fontforge font-manager evince
+    apt update && apt install -y audacity gimp picard scrcpy vlc pdfarranger ffmpeg fonts-khmeros fonts-khmeros-core geogebra texlive dvipng texlive-latex-extra rhythmbox-plugin-alternative-toolbar git aircrack-ng fontforge font-manager evince xclip
 
     # Install youtube-dl from official site
     wget https://yt-dl.org/downloads/latest/youtube-dl -O /usr/local/bin/youtube-dl
@@ -129,29 +129,29 @@ chmod +x $home/Others/Apps/close-all-windows.sh
     # Download additional icons
     sudo -u $user git clone git@github.com:Dimorng/customIcons.git $home/Others/customIcons/
 
-    # create alias (command) for clean up system
-    echo '#clean up system' >> $home/.bash_aliases
-    echo "alias clean='sudo apt clean && sudo apt autoclean && sudo apt autoremove'" >> $home/.bash_aliases
+    # create .bash_aliases or bash_functions
+    create() {
+        keyw=$1
+        if [ X"$(ls -a $home | grep $keyw)" = X'' ]
+        then
+            sudo -u $user cp $home/SETUP_SCRIPT/other/aliasesNfuctions/$keyw $home/.$keyw
+        else
+            sudo -u $user cat $home/SETUP_SCRIPT/other/aliasesNfuctions/$keyw >> $home/.$keyw
+        fi
+    }
 
-    # Configure to use ~/.bash_functions file
-    echo '# Read process shell functions' >> $home/.bashrc
-    echo 'if [ -f ~/.bash_functions ]; then' >> $home/.bashrc
-    echo '    . ~/.bash_functions' >> $home/.bashrc
-    echo 'fi' >> $home/.bashrc
-        # create shell function (command) to check or update LibreOffice to the lastest version available from office website
-        sudo -u $user touch $home/.bash_functions
-        echo '# Check or Update LibreOffice to the lastest version (.deb download from official LibreOffice Website)' >> $home/.bash_functions
-        echo 'function cLO() {' >> $home/.bash_functions
-        echo '   optn=$1' >> $home/.bash_functions
-        echo "   if [[ \$optn == '-U' ]]" >> $home/.bash_functions
-        echo "   then" >> $home/.bash_functions
-        echo '      cd ~/SETUP_SCRIPT/ && sudo ./updateLibreOffice.sh && cd -' >> $home/.bash_functions
-        echo '   else' >> $home/.bash_functions
-        echo '      python3 ~/SETUP_SCRIPT/checkLO.py' >> $home/.bash_functions
-        echo '   fi' >> $home/.bash_functions
-        echo '}' >> $home/.bash_functions
-        # give executable permission to script that use to update LibreOffice
-        chmod +x $home/SETUP_SCRIPT/updateLibreOffice.sh
+        create bash_aliases
+
+        # Create bash shell function
+            # check if ~/.bash_functions if enable
+            if [ X"$(cat $home/.bashrc | grep ~\/.bash_functions)" = X'' ]
+            then
+                sudo -u $user cat $home/SETUP_SCRIPT/other/aliasesNfuctions/configFunc >> $home/.bashrc
+            fi
+            # create bash shell function
+            create bash_functions
+            # give executable permission to script that use to update LibreOffice (shell function)
+            chmod +x $home/SETUP_SCRIPT/updateLibreOffice.sh
 
 # Clean up system and reboot
 sudo -u $user mv $home/TMP/*.deb $home/DEB/

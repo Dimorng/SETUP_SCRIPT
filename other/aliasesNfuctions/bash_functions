@@ -1,0 +1,10 @@
+# Check or Update LibreOffice to the lastest version (.deb download from official LibreOffice Website)
+function cLO() {
+   optn=$1
+   if [[ $optn == '-U' ]]
+   then
+      cd ~/SETUP_SCRIPT/ && sudo ./updateLibreOffice.sh && cd -
+   else
+      python3 ~/SETUP_SCRIPT/checkLO.py
+   fi
+}

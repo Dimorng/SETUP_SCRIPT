@@ -1,0 +1,11 @@
+\usepackage{upgreek}
+
+% font style of latex % comment all this to get default font ===
+
+% Times style font
+ %\usepackage{txfonts}
+% Century Schoolbook style font
+ %\usepackage{fouriernc}
+% Palatino style font
+ %\usepackage{mathpazo}
+% ======

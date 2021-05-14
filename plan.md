@@ -8,7 +8,7 @@
 
 * [x] simplyfied aliase and shell funciton code in `set-up.sh`
 
-* [ ] smarter configure `reshift.conf` - check if `reshift.conf` already exit before doing sth
+* [x] smarter configure `reshift.conf` - check if `reshift.conf` already exit before doing sth
 
 * [ ] Document manually set up work
 

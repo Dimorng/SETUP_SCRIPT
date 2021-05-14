@@ -37,7 +37,13 @@ apt update && apt upgrade -y
 apt install -y tlp tlp-rdw && tlp start
 
 # configure redshif for Cambodia location
-sudo -u $user cp $home/SETUP_SCRIPT/other/redshift.conf $home/.config/
+if [ X"$(ls -a $home/.config/ | grep redshift.conf)" = X"" ]
+then
+    sudo -u $user cp $home/SETUP_SCRIPT/other/redshift.conf $home/.config/
+else
+    sudo -u $user touch $home/Desktop/redshift.conf_is_already_exist_readme
+    echo "compare it ($home/.config/redshift.conf) with the one it should be ($home/SETUP_SCRIPT/other/redshift.conf)" >> $home/Desktop/redshift.conf_is_already_exist_readme
+fi
 
 # fix Khmer digraph in Khmer keyboard layout
 sudo -u $user cp /usr/share/X11/xkb/symbols/kh $home/Documents/Original-Khmer-Keyboard-Layout

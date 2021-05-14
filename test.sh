@@ -17,7 +17,7 @@
 # header end =====
 
 # test code start here ===
-python3 $home/SETUP_SCRIPT/python/TexMathLink.py
+
 # test code end here ===
 
 # foot start =====

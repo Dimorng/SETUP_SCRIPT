@@ -6,4 +6,10 @@
 
 * [x] put python file in one folder
 
-* [x] simplyfied aliase and sell funciton code in `set-up.sh`
+* [x] simplyfied aliase and shell funciton code in `set-up.sh`
+
+* [ ] smarter configure `reshift.conf` - check if `reshift.conf` already exit before doing sth
+
+* [ ] Document manually set up work
+
+* [ ] Update Manually set up guide

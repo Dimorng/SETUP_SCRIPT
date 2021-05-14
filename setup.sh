@@ -119,6 +119,8 @@ chmod +x $home/Others/Apps/close-all-windows.sh
                     L=$(python3 TexMathLink.py)
                     # download
                     sudo -u $user wget -P $home/Desktop/LOextension/ $L
+                    # suggested additional TexMath LaTeX preamble to add
+                    sudo -u $user cp $home/SETUP_SCRIPT/other/LibreOffice/extra-line-to-put-in-texmath-preamble-and-save-as-global $home/Desktop/LOextension/
             sudo -u $user cp $home/Desktop/LOextension/* $home/DEB/LibreOffice/extension/
 
 # Other (require connected to github via ssh)

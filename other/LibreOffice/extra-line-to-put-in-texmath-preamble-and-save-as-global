@@ -1,3 +1,5 @@
+% should be below `\usepackage[usenames]{color}` in TexMath preamble
+% ======start copy from this line =======
 \usepackage{upgreek}
 
 % font style of latex % comment all this to get default font ===
@@ -8,4 +10,5 @@
  %\usepackage{fouriernc}
 % Palatino style font
  %\usepackage{mathpazo}
-% ======
+% =======stop copy at the end of this line =========
+% should be above `\usepackage{ifxetex}` in TexMath preamble

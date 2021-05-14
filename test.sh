@@ -17,7 +17,8 @@
 # header end =====
 
 # test code start here ===
- 
+                    # suggested additional TexMath LaTeX preamble to add
+                    sudo -u $user cp $home/SETUP_SCRIPT/other/LibreOffice/extra-line-to-put-in-texmath-preamble-and-save-as-global $home/Desktop/
 # test code end here ===
 
 # foot start =====

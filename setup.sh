@@ -37,15 +37,14 @@ apt update && apt upgrade -y
 apt install -y tlp tlp-rdw && tlp start
 
 # configure redshif for Cambodia location
-sudo -u $user wget -P $home/.config/ 'https://raw.githubusercontent.com/Dimorng/Linux-Mint-File/main/redshift.conf'
+sudo -u $user cp $home/SETUP_SCRIPT/other/redshift.conf $home/.config/
 
 # fix Khmer digraph in Khmer keyboard layout
 sudo -u $user cp /usr/share/X11/xkb/symbols/kh $home/Documents/Original-Khmer-Keyboard-Layout
-rm /usr/share/X11/xkb/symbols/kh
-wget -P /usr/share/X11/xkb/symbols/ 'https://raw.githubusercontent.com/Dimorng/Linux-Mint-File/main/kh' 
+cp $home/SETUP_SCRIPT/other/kh /usr/share/X11/xkb/symbols/kh
 
 # Download bash script that close all opened windows
-sudo -u $user wget -P $home/Others/Apps/ 'https://raw.githubusercontent.com/Dimorng/Linux-Mint-File/main/close-all-windows.sh'
+sudo -u $user cp $home/SETUP_SCRIPT/other/close-all-windows.sh $home/Others/Apps/
 chmod +x $home/Others/Apps/close-all-windows.sh
 
 # Install Additional app

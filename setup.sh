@@ -5,7 +5,7 @@
 # define $home as the home directory of currently look in user:
     # find username of current account
     pwd > /home/tmp.link
-    user=$(python3 whoRu.py)
+    user=$(python3 python/whoRu.py)
     rm /home/tmp.link
     # path of home dir of current user
     home='/home/'$user
@@ -79,7 +79,7 @@ chmod +x $home/Others/Apps/close-all-windows.sh
             # Bitwaden 
                 # Done At the beginning
             # Visual studio code
-            sudo -u $user wget $(python3 vscode.py) -P $home/DEB/
+            sudo -u $user wget $(python3 $home/SETUP_SCRIPT/python/vscode.py) -P $home/DEB/
 
         # install all .deb
         dpkg -i $home/DEB/*.deb
@@ -98,7 +98,7 @@ chmod +x $home/Others/Apps/close-all-windows.sh
         apt-get autoremove
         # Dowload Latest version of LibreOffice for office website
             # get Download Link
-            L=$(python3 LO_lastest_V_link.py)
+            L=$(python3 $home/SETUP_SCRIPT/python/LO_lastest_V_link.py)
             # Download LibreOffcie .deb files
             sudo -u $user mkdir $home/DEB/LibreOffice/
             sudo -u $user wget $L -P $home/DEB/LibreOffice/
@@ -109,13 +109,13 @@ chmod +x $home/Others/Apps/close-all-windows.sh
             sudo -u $user mkdir $home/Desktop/LOextension $home/DEB/LibreOffice/extension/
                 # SBBIC Khmer Spelling Checker
                     # get link
-                    L=$(python3 SBBICKhmerSpellingChecker.py)
+                    L=$(python3 $home/SETUP_SCRIPT/python/SBBICKhmerSpellingChecker.py)
                     # download
                     sudo -u $user wget -P $home/Desktop/LOextension/ $L
 
                 # TexMath
                     # get link
-                    L=$(python3 TexMathLink.py)
+                    L=$(python3 $home/SETUP_SCRIPT/python/TexMathLink.py)
                     # download
                     sudo -u $user wget -P $home/Desktop/LOextension/ $L
                     # suggested additional TexMath LaTeX preamble to add

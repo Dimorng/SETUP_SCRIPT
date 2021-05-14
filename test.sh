@@ -4,7 +4,7 @@
 # define $home as the home directory of currently look in user:
     # find username of current account
     pwd > /home/tmp.link
-    user=$(python3 whoRu.py)
+    user=$(python3 python/whoRu.py)
     rm /home/tmp.link
     # path of home dir of current user
     home='/home/'$user
@@ -17,7 +17,7 @@
 # header end =====
 
 # test code start here ===
-sudo -u $user cp $home/SETUP_SCRIPT/other/redshift.conf $home/Desktop/
+python3 $home/SETUP_SCRIPT/python/TexMathLink.py
 # test code end here ===
 
 # foot start =====

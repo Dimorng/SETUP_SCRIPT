@@ -5,6 +5,6 @@ function cLO() {
    then
       cd ~/SETUP_SCRIPT/ && sudo ./updateLibreOffice.sh && cd -
    else
-      python3 ~/SETUP_SCRIPT/checkLO.py
+      python3 ~/SETUP_SCRIPT/python/checkLO.py
    fi
 }

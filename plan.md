@@ -10,6 +10,6 @@
 
 * [x] smarter configure `reshift.conf` - check if `reshift.conf` already exit before doing sth
 
-* [ ] Document manually set up work
+* [x] Document manually set up work
 
 * [ ] Update Manually set up guide

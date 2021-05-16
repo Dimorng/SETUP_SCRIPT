@@ -12,4 +12,6 @@
 
 * [x] Document manually set up work
 
+* [x] add 'How to setup Ttyper' as optional 
+
 * [ ] Update Manually set up guide

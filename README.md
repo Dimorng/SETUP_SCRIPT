@@ -130,3 +130,20 @@ Command (shell function) created:
 ```
 git clone https://github.com/Dimorng/SongCollection.git ~/Music
 ```
+
+11. (Optional) Install Ttyper to Test Your Typing Speed in Linux Terminal 
+
+    - installation
+
+    ```bash
+    sudo apt update
+    sudo apt install cargo
+    cargo install ttyper
+    ```
+
+    - crate symbolic link to call (lanch) ttyper in terminal
+
+    ```
+    sudo ln -s ~/.cargo/bin/ttyper /usr/local/bin/ttyper
+    ```
+    [guid about ttyper by itsfoss](https://itsfoss.com/ttyper/)

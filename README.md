@@ -147,3 +147,16 @@ git clone https://github.com/Dimorng/SongCollection.git ~/Music
     sudo ln -s ~/.cargo/bin/ttyper /usr/local/bin/ttyper
     ```
     [guid about ttyper by itsfoss](https://itsfoss.com/ttyper/)
+
+12. Ulauncher setting
+
+    **Preference**
+    - Number of frequenct apps to show: `4`
+    - Show indicator icon: `disable`
+    - Lauch at login: `enable`
+
+    **Shortcut**
+    - Name: `Emojipedia`, Keyword: `emp`, Query or Script: `https://emojipedia.org/`, Run without argument: `enable`, Icon: `~/Others/customIcons/220px-Emojipedia_logo.png`
+
+    **Extensions**
+    - Name: `Emoji`, by: `Aleksandr Gornostal`, URL: `https://github.com/Ulauncher/ulauncher-emoji`

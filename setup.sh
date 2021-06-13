@@ -74,6 +74,11 @@ chmod +x $home/Others/Apps/close-all-windows.sh
     apt update
     apt install inkscape -y
 
+    # Install Ulauncher
+    add-apt-repository ppa:agornostal/ulauncher -y
+    apt update
+    apt install ulauncher -y
+
     # Install via Flatpak
     # Curtail
     flatpak install flathub com.github.huluti.Curtail -y

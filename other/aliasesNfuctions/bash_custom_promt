@@ -1,0 +1,20 @@
+lightGreenBold="\[\033[1;32m\]"
+lightBlueBold="\[\033[1;34m\]"
+lightCyanBold="\[\033[1;36m\]"
+red="\[\033[0;31m\]"
+reset="\[\033[0m\]"
+
+function parse_git_branch () {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/git:(\1)/'
+}
+
+PS1="\n${debian_chroot:+($debian_chroot)}["
+PS1+="$lightGreenBold \u" # username
+PS1+="$reset at"
+PS1+="$lightGreenBold \h" #type of user
+PS1+="$reset ]"
+PS1+="$lightBlueBold \W"
+PS1+="$red \$(parse_git_branch)"
+PS1+="\n"
+PS1+="$lightGreenBold\$ "
+PS1+="$reset"

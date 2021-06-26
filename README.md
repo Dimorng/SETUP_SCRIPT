@@ -160,3 +160,14 @@ git clone https://github.com/Dimorng/SongCollection.git ~/Music
 
     **Extensions**
     - Name: `Emoji`, by: `Aleksandr Gornostal`, URL: `https://github.com/Ulauncher/ulauncher-emoji`
+
+13. Customized Bash Prompt (optional)
+    - copy `SETUP_SCRIPT/other/aliasesNfuctions/bash_custom_promt` and paste to `~` and rename it to `.bash_custom_promt`
+    - add this code to `.bashrc` (see picture):
+    ```
+    #Add custom promt file
+    if [ -f ~/.bash_custom_promt ]; then
+        . ~/.bash_custom_promt
+    fi
+    ```
+    ![custom bash promt](image/bash_custom_promt.png)

@@ -171,3 +171,6 @@ git clone https://github.com/Dimorng/SongCollection.git ~/Music
     fi
     ```
     ![custom bash promt](image/bash_custom_promt.png)
+    
+    bash prompt after customized:
+    ![bash prompt after customized](image/bash_promt_after_customized.png)

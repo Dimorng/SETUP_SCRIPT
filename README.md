@@ -86,12 +86,12 @@ Command (shell function) created:
 
     ![Keyboard Layout Configure](image/KeyboardLayoutConf.png)
 
-7. Change Date Format
+7. Change Clock & Date Format
     - **disable 24h clock**: clock applet (left click) > Date & Time Settings > disable Use 24h clock
 
     ![disable 24h clock](image/Disable24hClock.png)
 
-    - suggeted clock format on the panel: `%l:%M %p (%Z)`
+    - suggeted clock format on the panel: `%l:%M %p (%Z)%n(%a) %d/%m/%Y`
         - clock applet (right click) > configure... > enable Use a custom date format > Date format: `%l:%M %p (%Z)`
 
         ![change clock format on the panel](image/customPanelDateFormat.png)
@@ -101,7 +101,18 @@ Command (shell function) created:
 
         ![change clock format on the login screen top panel](image/LoginScreenClockFormat.png)
 
-8. Customize bottom panel
+8. Install Additional Applets
+
+    recommended applets:
+
+    a. [Color Picker](https://cinnamon-spices.linuxmint.com/applets/view/179) (easily activate (pick up color) by `Ctrl + Alt + P` Key Binding)
+
+    b. [Clipboard QR code applet](https://cinnamon-spices.linuxmint.com/applets/view/213) (required to `sudo apt install python3-zbar` to activate bar/qr code scanning fuctionality)
+
+    ![Recommended Additonal Applets](image/recommended_additional_applets.png)
+
+
+9. Customize bottom panel
 
     Recommended customize to look like this:
 
@@ -114,7 +125,7 @@ Command (shell function) created:
 
         ![enale Panel edit mode to arrange applets on the right hand side of the panel](image/enablePanelEditMode.png)
 
-9. Enable and disable some sounds
+10. Enable and disable some sounds
     
     Menu > Sound > Sounds:
 
@@ -125,13 +136,13 @@ Command (shell function) created:
 
     ![Enable and disable some sounds](image/enableNdisableSomeSounds.png)
 
-10. (Optional) Download songs:
+11. (Optional) Download songs:
 
 ```
 git clone https://github.com/Dimorng/SongCollection.git ~/Music
 ```
 
-11. (Optional) Install Ttyper to Test Your Typing Speed in Linux Terminal 
+12. (Optional) Install Ttyper to Test Your Typing Speed in Linux Terminal 
 
     - installation
 
@@ -148,7 +159,7 @@ git clone https://github.com/Dimorng/SongCollection.git ~/Music
     ```
     [guid about ttyper by itsfoss](https://itsfoss.com/ttyper/)
 
-12. Ulauncher setting
+13. Ulauncher setting
 
     **Preference**
     - Number of frequenct apps to show: `4`
@@ -161,7 +172,7 @@ git clone https://github.com/Dimorng/SongCollection.git ~/Music
     **Extensions**
     - Name: `Emoji`, by: `Aleksandr Gornostal`, URL: `https://github.com/Ulauncher/ulauncher-emoji`
 
-13. Customized Bash Prompt (optional)
+14. Customized Bash Prompt (optional)
     - copy `SETUP_SCRIPT/other/aliasesNfuctions/bash_custom_promt` and paste to `~` and rename it to `.bash_custom_promt`
     - add this code to `.bashrc` (see picture):
     ```
@@ -174,3 +185,9 @@ git clone https://github.com/Dimorng/SongCollection.git ~/Music
     
     bash prompt after customized:
     ![bash prompt after customized](image/bash_promt_after_customized.png)
+
+15. Install More App
+
+    a. [Mailspring Email Client](https://getmailspring.com/download) (recommended to install via .deb package)
+
+    ![Mailspring Email Client](image/mailspring_email_client.png)

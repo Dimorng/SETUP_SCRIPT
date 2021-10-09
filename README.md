@@ -45,6 +45,7 @@ Command (shell function) created:
     - install extensions in `~/Desktop/LOextension/`
         - SBBIC Khmer Spelling Checker
         - TexMath
+        - LanguageTool (download from https://languagetool.org/)
     - add addtional preamble (in `~/Desktop/LOextension/extra-line-to-put-in-texmath-preamble-and-save-as-global`) of TexMath and Save as Global
 
     ![add addtional preamble of TexMath and Save as Global](image/AdditonalTexMathPreamble.png)

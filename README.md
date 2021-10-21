@@ -25,6 +25,7 @@ Command (shell function) created:
 
 ## Tested with: 
 - Linux Mint 20.1 (Ulyssa) Cinnamon Edition (on 4 May 2021)
+- Linux Mint 20.2 (Uma) Cinnamon Edition (on 19 Oct 2021)
 
 ## Complete the setup (manually done)
 
